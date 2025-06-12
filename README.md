@@ -1,6 +1,6 @@
-# znc-antiping — ZNC Module
+# znc-antiping — A ZNC Module
 
-**antiping** is a ZNC module written in Python that prevents IRC nick pings by inserting a **zero-width space** (`\u200b`) into specific words. This is useful for avoiding unwanted notifications when mentioning common names or roles like "mod", "staff", etc.
+**antiping** is a ZNC module written in Python that prevents IRC nick pings by inserting a **zero-width space** (`\u200b`) into specific words. This is useful for avoiding unwanted notifications when mentioning common names or roles.
 
 ---
 
