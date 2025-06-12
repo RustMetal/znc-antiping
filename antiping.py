@@ -72,15 +72,25 @@ class antiping(znc.Module):
 
     def _process_text(self, text):
         for word in self.watchlist:
-            pattern = re.compile(re.escape(word), re.IGNORECASE)
-
+            # Skip obfuscation if the word is preceded by '!!'
+            pattern = re.compile(r'(?<![!])(?:!!)?\b(' + re.escape(word) + r')\b', re.IGNORECASE)
+    
             def replacer(match):
-                matched_word = match.group(0)
-                mid = len(matched_word) // 2
-                return matched_word[:mid] + '\u200b' + matched_word[mid:]
-
+                full_match = match.group(0)
+                clean_word = match.group(1)
+    
+                # If the match starts with '!!', strip the '!!' and return the clean word unmodified
+                if full_match.startswith("!!"):
+                    return clean_word  # remove the '!!' and don't obfuscate
+    
+                # Otherwise, obfuscate
+                mid = len(clean_word) // 2
+                return clean_word[:mid] + '\u200b' + clean_word[mid:]
+    
             text = pattern.sub(replacer, text)
+    
         return text
+
 
     def _save_watchlist(self):
         self.SetNV("watchlist", json.dumps(self.watchlist))
