@@ -94,4 +94,4 @@ class antiping(znc.Module):
                 self.watchlist = []
                 self.PutModule("Error loading watchlist, starting with empty list.")
         else:
-            self.watchlist = ["staff", "mod", "support"]  # default
+            self.watchlist = ["plugin", "days"]  # default censor list
