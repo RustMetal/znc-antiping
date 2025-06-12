@@ -24,7 +24,7 @@
 3. From your IRC client, load the module:
    ```bash
    /msg *znc loadmod modpython
-   /msg *status load antiping
+   /msg *status loadmod antiping
 4. Add or remove words from the list:
    ```bash
    /msg *antiping add <word>
