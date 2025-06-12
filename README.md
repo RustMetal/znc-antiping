@@ -14,6 +14,7 @@
   - `/me` actions (CTCP `ACTION`)
 - Built-in commands for managing the watchlist.
 - Persistent word list across ZNC restarts.
+- Use !! before the word to not obfuscate it.
 
 ---
 
