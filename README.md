@@ -24,7 +24,7 @@
 2. Place the `antiping.py` file in your ZNC modules directory (usually `~/.znc/modules/`).
 3. From your IRC client, load the module:
    ```bash
-   /msg *znc loadmod modpython
+   /msg *status loadmod modpython
    /msg *status loadmod antiping
 4. Add or remove words from the list:
    ```bash
